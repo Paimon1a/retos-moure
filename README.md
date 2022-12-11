@@ -7,4 +7,4 @@ los retos de moure en java
 Los resultados del ejercicio se muestras al ejecutar los test.
 
 # Dependencias
-Version de java LTS 17
+[![Java](https://img.shields.io/static/v1?label=java&message=17&color=blue?style=flat-square)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
