@@ -4,24 +4,22 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class Reto0Test {
+    Reto0 reto0 = new Reto0();
 
     @Test
     void fizzbuzzRepeat5() {
 //        cof
-        Reto0 reto0 = new Reto0();
-        StringBuilder res = new StringBuilder();
         final String EXPECTED = """
                 fizz
                 buzz
                 """;
+        final int REPETITIONS = 5;
 
 //        exe
-        for (int i = 0; i < 5; i++) {
-            res.append(reto0.fizzbuzz(i + 1));
-        }
+        String res = repeatFizzBuzz(REPETITIONS);
 
 //        assert
-        Assertions.assertEquals(EXPECTED, res.toString());
+        Assertions.assertEquals(EXPECTED, res);
 
         printIfCorrect(new InfoTest(EXPECTED, res, "fizzbuzzRepeat5"));
     }
@@ -29,8 +27,7 @@ class Reto0Test {
     @Test
     void fizzbuzzRepeat15() {
 //        cof
-        Reto0 reto0 = new Reto0();
-        StringBuilder res = new StringBuilder();
+        final int REPETITIONS = 15;
         final String EXPECTED = """
                 fizz
                 buzz
@@ -42,12 +39,10 @@ class Reto0Test {
                 """;
 
 //        exe
-        for (int i = 0; i < 15; i++) {
-            res.append(reto0.fizzbuzz(i + 1));
-        }
+        String res = repeatFizzBuzz(REPETITIONS);
 
 //        assert
-        Assertions.assertEquals(EXPECTED, res.toString());
+        Assertions.assertEquals(EXPECTED, res);
 
         printIfCorrect(new InfoTest(EXPECTED, res, "fizzbuzzRepeat15"));
     }
@@ -55,8 +50,7 @@ class Reto0Test {
     @Test
     void fizzbuzzRepeat100() {
 //        cof
-        Reto0 reto0 = new Reto0();
-        StringBuilder res = new StringBuilder();
+        final int REPETITIONS = 100;
         final String EXPECTED = """
                 fizz
                 buzz
@@ -108,12 +102,10 @@ class Reto0Test {
                 """;
 
 //        exe
-        for (int i = 0; i < 100; i++) {
-            res.append(reto0.fizzbuzz(i + 1));
-        }
+        String res = repeatFizzBuzz(REPETITIONS);
 
 //        assert
-        Assertions.assertEquals(EXPECTED, res.toString());
+        Assertions.assertEquals(EXPECTED, res);
 
         printIfCorrect(new InfoTest(EXPECTED, res, "fizzbuzzRepeat100"));
     }
@@ -122,6 +114,14 @@ class Reto0Test {
         if (infoTest.actual.toString().equals(infoTest.expected)) {
             System.out.println(infoTest.nameMethodTest + ":\n" + infoTest.actual.toString());
         }
+    }
+
+    private String repeatFizzBuzz(int repeat) {
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < repeat; i++) {
+            res.append(reto0.fizzbuzz(i + 1).isEmpty() ? "" : "%s\n".formatted(reto0.fizzbuzz(i + 1)));
+        }
+        return res.toString();
     }
 }
 

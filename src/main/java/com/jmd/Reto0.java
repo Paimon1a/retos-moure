@@ -19,25 +19,25 @@ package com.jmd;
  */
 
 public class Reto0 {
-    public String fizzbuzz(int num) {
-        if (num % 3 == 0 && num % 5 == 0) {
-            return "fizzbuzz\n";
-        }
-        if (num % 3 == 0) {
-            return "fizz\n";
-        }
-        if (num % 5 == 0) {
-            return "buzz\n";
-        }
-        return "";
-    }
-
     public static void main(String[] args) {
         Reto0 reto0 = new Reto0();
-        StringBuilder fizzbuzz = new StringBuilder();
+        String fizzbuzz = "";
         for (int i = 0; i < 100; i++) {
-            fizzbuzz.append(reto0.fizzbuzz(i + 1));
+            fizzbuzz += reto0.fizzbuzz(i + 1).isEmpty() ? "" : "%s\n".formatted(reto0.fizzbuzz(i + 1));
+            System.out.print(fizzbuzz);
         }
-        System.out.println(fizzbuzz);
+    }
+
+    public String fizzbuzz(int num) {
+        if (num % 3 == 0 && num % 5 == 0) {
+            return "fizzbuzz";
+        }
+        if (num % 3 == 0) {
+            return "fizz";
+        }
+        if (num % 5 == 0) {
+            return "buzz";
+        }
+        return "";
     }
 }
