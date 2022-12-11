@@ -31,4 +31,13 @@ public class Reto0 {
         }
         return "";
     }
+
+    public static void main(String[] args) {
+        Reto0 reto0 = new Reto0();
+        StringBuilder fizzbuzz = new StringBuilder();
+        for (int i = 0; i < 100; i++) {
+            fizzbuzz.append(reto0.fizzbuzz(i + 1));
+        }
+        System.out.println(fizzbuzz);
+    }
 }
