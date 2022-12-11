@@ -5,3 +5,6 @@ los retos de moure en java
 
 # Resultados
 Los resultados del ejercicio se muestras al ejecutar los test.
+
+# Dependencias
+Version de java LTS 17
