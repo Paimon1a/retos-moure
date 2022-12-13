@@ -21,7 +21,7 @@ class Reto0Test {
 //        assert
         Assertions.assertEquals(EXPECTED, res);
 
-        printIfCorrect(new InfoTest(EXPECTED, res, "fizzbuzzRepeat5"));
+        new InfoTest(EXPECTED, res, "fizzbuzzRepeat5").printIfCorrect();
     }
 
     @Test
@@ -44,7 +44,7 @@ class Reto0Test {
 //        assert
         Assertions.assertEquals(EXPECTED, res);
 
-        printIfCorrect(new InfoTest(EXPECTED, res, "fizzbuzzRepeat15"));
+        new InfoTest(EXPECTED, res, "fizzbuzzRepeat15").printIfCorrect();
     }
 
     @Test
@@ -107,13 +107,7 @@ class Reto0Test {
 //        assert
         Assertions.assertEquals(EXPECTED, res);
 
-        printIfCorrect(new InfoTest(EXPECTED, res, "fizzbuzzRepeat100"));
-    }
-
-    private void printIfCorrect(InfoTest infoTest) {
-        if (infoTest.actual.toString().equals(infoTest.expected)) {
-            System.out.println(infoTest.nameMethodTest + ":\n" + infoTest.actual.toString());
-        }
+        new InfoTest(EXPECTED, res, "fizzbuzzRepeat100").printIfCorrect();
     }
 
     private String repeatFizzBuzz(int repeat) {
@@ -122,17 +116,5 @@ class Reto0Test {
             res.append(reto0.fizzbuzz(i + 1).isEmpty() ? "" : "%s\n".formatted(reto0.fizzbuzz(i + 1)));
         }
         return res.toString();
-    }
-}
-
-class InfoTest {
-    Object expected;
-    Object actual;
-    String nameMethodTest;
-
-    public InfoTest(Object expected, Object actual, String nameMethodTest) {
-        this.expected = expected;
-        this.actual = actual;
-        this.nameMethodTest = nameMethodTest + "()";
     }
 }

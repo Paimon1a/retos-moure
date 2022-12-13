@@ -17,6 +17,8 @@ class Reto1Test {
 
 //        assert
         Assertions.assertTrue(isAnagram);
+
+        new InfoTest(true, isAnagram, "isAnagramTrue").printIfCorrect();
     }
 
     @Test
@@ -30,5 +32,7 @@ class Reto1Test {
 
 //        assert
         Assertions.assertFalse(isAnagram);
+
+        new InfoTest(false, isAnagram, "isAnagramFalse").printIfCorrect();
     }
 }
