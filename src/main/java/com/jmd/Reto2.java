@@ -23,6 +23,9 @@ import java.util.List;
  *
  */
 public class Reto2 {
+    public static void main(String[] args) {
+        System.out.println(new Reto2().fibonacci2(10));
+    }
     public String fibonacci(int to) {
         StringBuilder res = new StringBuilder();
         long n1 = 0;
@@ -30,13 +33,11 @@ public class Reto2 {
         long aux;
         for (int i = 0; i < to; i++) {
             if (i == 0) {
-                System.out.printf("%s, %s, ", n1, n2);
                 res.append("%s, %s, ".formatted(n1, n2));
             } else {
                 aux = n1 + n2;
                 n1 = n2;
                 n2 = aux;
-                System.out.print(aux + ", ");
                 res.append("%s, ".formatted(aux));
             }
         }
