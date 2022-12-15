@@ -13,7 +13,7 @@ public class InfoTest {
 
     public void printIfCorrect() {
         if (actual.toString().equals(expected.toString())) {
-            System.out.println(nameMethodTest + ":\n" + actual.toString());
+            System.out.println(nameMethodTest + ":\n" + actual.toString() + "\n");
         }
     }
 }
